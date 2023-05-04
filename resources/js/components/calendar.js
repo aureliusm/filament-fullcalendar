@@ -51,6 +51,7 @@ export default (Alpine) => {
                             initialDate: localStorage.getItem('fullcalendar.date.' + key) ?? initialDate ?? undefined,
                             datesSet: function ({ start, view }) {
                                 localStorage.setItem('fullcalendar.view.' + key, view.type);
+                                start.setDate(start.getDate() + 10);
                                 localStorage.setItem('fullcalendar.date.' + key, start.toISOString());
                             },
                         }
